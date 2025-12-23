@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: recovery-system-js
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: "10000"
+    autoDeploy: true
